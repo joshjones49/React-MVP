@@ -124,6 +124,18 @@ app.patch('/watchlists/:id', async (req, res) => {
     }
 });
 
+//delete
+app.delete('/watchlists/:id', async (req, res) => {
+    const id = req.params.id;
+    try {
+        const {rows} = await pool.query('DELETE FROM watchlist WHERE id = $1', [id]);
+        res.status(200).send(rows);
+    } catch (error) {
+        res.json(error)
+        console.log(error);
+    }
+});
+
 
 
 //LISTENER
