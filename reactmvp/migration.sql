@@ -1,5 +1,5 @@
 
-
+--'C:/Users/joshj/OneDrive/Desktop/reactmvp/React-MVP/reactmvp/migration.sql'
 
 
 DROP TABLE IF EXISTS  watchlist;
@@ -18,15 +18,15 @@ CREATE TABLE show (
 );
 
 INSERT INTO show (name, image) VALUES 
-('BERSERK 1997', 'React-MVP/images/berserk-image.jpg'),
-('KONOSUBA', 'React-MVP/images/konosuba-image.jpg'),
-('KABANERI OF THE IRON FORTRESS', 'React-MVP/images/Kabaneri-image.jpg'),
-('BERSERK OF GLUTTONY', 'React-MVP/images/Berserk-Of-Gluttony-image.jpg'),
-('RURONI KENSHIN', 'React-MVP/images/Ruroni-image.jpg'),
-('YUYU HAKUSHO', 'React-MVP/images/YYH-image.jpg'),
-('MR. OSOMATSU', 'React-MVP/images/Oso-image.jpg'),
-('ADVENT OF THE RED COMET', 'React-MVP/images/Advent-image.jpg'),
-('JOJOS BIZARRE ADVENTURE', 'React-MVP/images/JJBA-image.jpg'),
-('PARASYTE', 'React-MVP/images/Parasyte-image.jpg');
+('BERSERK 1997', 'C:/Users/joshj/OneDrive/Desktop/reactmvp/React-MVP/reactmvp/images/berserk-image.jpg'),
+('KONOSUBA', 'C:/Users/joshj/OneDrive/Desktop/reactmvp/React-MVP/reactmvp/images/konosuba-image.jpg'),
+('KABANERI OF THE IRON FORTRESS', 'C:/Users/joshj/OneDrive/Desktop/reactmvp/React-MVP/reactmvp/images/Kabaneri-image.jpg'),
+('BERSERK OF GLUTTONY', 'C:/Users/joshj/OneDrive/Desktop/reactmvp/React-MVP/reactmvp/images/Berserk-Of-Gluttony-image.jpg'),
+('RURONI KENSHIN', 'C:/Users/joshj/OneDrive/Desktop/reactmvp/React-MVP/reactmvp/images/Ruroni-image.jpg'),
+('YUYU HAKUSHO', 'C:/Users/joshj/OneDrive/Desktop/reactmvp/React-MVP/reactmvp/images/YYH-image.jpg'),
+('MR. OSOMATSU', 'C:/Users/joshj/OneDrive/Desktop/reactmvp/React-MVP/reactmvp/images/Oso-image.jpg'),
+('ADVENT OF THE RED COMET', 'C:/Users/joshj/OneDrive/Desktop/reactmvp/React-MVP/reactmvp/images/Advent-image.jpg'),
+('JOJOS BIZARRE ADVENTURE', 'C:/Users/joshj/OneDrive/Desktop/reactmvp/React-MVP/reactmvp/images/JJBA-image.jpg'),
+('PARASYTE', 'C:/Users/joshj/OneDrive/Desktop/reactmvp/React-MVP/reactmvp/images/Parasyte-image.jpg');
 
 

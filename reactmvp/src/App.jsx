@@ -2,13 +2,26 @@
 
 
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import LeftContainer from '../components/LeftContainer'
 import RightContainer from '../components/RightContainer'
 import toast, { Toaster } from 'react-hot-toast';
 
 function App() {
+
+  const [shows, setShows] = useState([])
+
+  useEffect(() => {
+    const getShows = async () => {
+      const res = await fetch('http://localhost:8000/shows')
+      const data = await res.json()
+      setShows(data)
+    }
+
+    getShows()
+
+  }, [])
 
 
   return (
@@ -25,7 +38,7 @@ function App() {
   }}
 />
       <LeftContainer />
-      <RightContainer />
+      <RightContainer shows={shows}/>
     </div>
   )
 }

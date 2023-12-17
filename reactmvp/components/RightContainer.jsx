@@ -1,8 +1,8 @@
 
+import Display from "./Display"
 
 
-
-const RightContainer = () => {
+const RightContainer = ({shows}) => {
   return (
     <div id='right-container'>
       <input id='searchBar' 
@@ -11,7 +11,7 @@ const RightContainer = () => {
       placeholder="SEARCH">
       </input>
 
-      
+      <Display shows={shows}/>
     </div>
   )
 }

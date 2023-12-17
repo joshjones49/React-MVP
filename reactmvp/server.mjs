@@ -31,7 +31,7 @@ app.get('/shows', async (req, res) => {
     try {
         const {rows} = await pool.query('SELECT * FROM show ORDER BY id ASC;');
         res.status(200).json(rows)
-        console.log('Logged: All')
+        console.log('Logged All')
     } catch (error) {
         console.log(error);
         res.status(500).send(error);        
