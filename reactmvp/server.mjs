@@ -136,8 +136,6 @@ app.delete('/watchlists/:id', async (req, res) => {
     }
 });
 
-
-
 //LISTENER
 app.listen(port, () => {
     console.log('working')

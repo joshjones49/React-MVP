@@ -4,13 +4,15 @@
 
 import { useEffect, useState } from 'react'
 import './App.css'
+import Top from '../components/Top'
 
 function App() {
 
 
 
   return (
-    <div id='app'> 
+    <div>
+      <Top />
     </div>
   )
 }
