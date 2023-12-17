@@ -68,10 +68,10 @@ app.get('/watchlists', async (req, res) => {
 
 //get 1
 app.get('/watchlists/:name', async (req, res) => {
-    const name = req.params.name;
+    const name = req.params.name.toUpperCase();
 
     try {
-        const {rows} = await pool.query('SELECT * FROM watchlist WHERE name LIKE $1', [`%${name}%`]);
+        const {rows} = await pool.query('SELECT * FROM watchlist WHERE UPPER(name) LIKE UPPER($1)', [`%${name}%`]);
         res.status(200).send(rows);
         console.log('Logged:', name)
     } catch (error) {
