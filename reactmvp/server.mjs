@@ -99,6 +99,31 @@ app.post('/watchlists', async (req, res) => {
     }
 });
 
+//patch
+app.patch('/watchlists/:id', async (req, res) => {
+    const id = req.params.id
+
+    const { name, text } = req.body;
+
+    if (!name && !text) {
+        return res.status(400).json('At least one field required for update');
+    }
+    try {
+        const { rows } = await pool.query(
+            'UPDATE watchlist SET name = COALESCE($1, name), text = COALESCE($2, text) WHERE id = $3 RETURNING*',
+            [name, text, id]
+        );
+        if (rows.length === 0) {
+            return res.status(404).json({ error: 'List not found' });
+        }
+        res.status(200).json(rows[0]);
+        console.log('List Updated');
+    } catch (error) {
+        res.status(500).json(error);
+        console.error(error);
+    }
+});
+
 
 
 //LISTENER
