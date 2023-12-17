@@ -15,11 +15,17 @@ body {
 }
 
 #top {
-    background-color: rgba(49, 49, 49, 0.7);;
-    height: 70px;
+    background-color: rgba(29, 52, 97, 0.7);;
+    height: 90px;
+    width: 100%;
     display:flex;
     justify-content: space-between;
     align-items: center;
+}
+
+#mainContainer {
+    display: flex;
+    height: 90vh;
 }
 
 #searchContainer {
@@ -40,6 +46,8 @@ body {
     border: none;
     height: 40px;
     color: white;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .searchers {
@@ -47,6 +55,8 @@ body {
     width: 200px;
     opacity: 1;
     border: 2px solid orangered;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     text-align: center;
     font-size: 20px;
 }
@@ -56,4 +66,21 @@ body {
     align-items: center;
     width: 300px;
     height: 100%;
+}
+
+#RightContainer,
+#MidContainer,
+#LeftContainer {
+    height: 100%;
+    width: 33%;
+    overflow: auto;
+}
+
+.showDisplay {
+    background-color: rgb(255, 255, 255, .6);
+    color: var(--delft-blue);
+    border: 2px solid black;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
 }
