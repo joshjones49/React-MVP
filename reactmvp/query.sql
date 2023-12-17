@@ -1,1 +1,1 @@
-SELECT image FROM show;
+SELECT * FROM show;
