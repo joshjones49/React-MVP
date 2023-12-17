@@ -54,6 +54,50 @@ app.get('/shows/:name', async (req, res) => {
 
 //WISHLISTS ROUTES>
 
+//get all
+app.get('/watchlists', async (req, res) => {
+    try {
+        const {rows} = await pool.query('SELECT * FROM watchlist ORDER BY id ASC;');
+        res.status(200).json(rows)
+        console.log('Logged All')
+    } catch (error) {
+        console.log(error);
+        res.status(500).send(error);        
+    }
+});
+
+//get 1
+app.get('/watchlists/:name', async (req, res) => {
+    const name = req.params.name;
+
+    try {
+        const {rows} = await pool.query('SELECT * FROM watchlist WHERE name LIKE $1', [`%${name}%`]);
+        res.status(200).send(rows);
+        console.log('Logged:', name)
+    } catch (error) {
+        res.json(error)
+        console.log(error);
+    }
+});
+
+//post
+app.post('/watchlists', async (req, res) => {
+    const { name, text } = req.body;
+
+    if (!name || !text) {
+        return res.status(400).json('Name And List Required');
+    }
+     try {
+        const {rows} = await pool.query(
+            'INSERT INTO watchlist (name, text) VALUES ($1, $2) RETURNING*',
+            [name, text]
+        );
+        res.status(201).json(rows[0]);
+    } catch (error) {
+        res.status(500).json(error);
+        console.error(error);
+    }
+});
 
 
 
