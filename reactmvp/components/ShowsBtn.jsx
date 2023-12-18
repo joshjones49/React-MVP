@@ -1,12 +1,26 @@
 
+import { useEffect } from "react";
 
 
 
+const ShowsBtn = ({shows, fetchShows, isFetched, setIsFetched, setShows, getShows}) => {
 
-const ShowsBtn = ({shows, fetchShows, summary}) => {
+  const handleClick = () => {
+    if(!isFetched) {
+      fetchShows();
+      setIsFetched(true);
+    } else {
+      setIsFetched(false);
+      getShows();
+    }
+  }
+
   return (
-    <button type='button' onClick={() => fetchShows(shows)} className="subBtn">
-      SEARCH
+    <button 
+    type='button' 
+    onClick={handleClick} 
+    className="subBtn">
+      {isFetched ? 'RESET' : 'SEARCH'}
     </button>
   )
 }

@@ -2,11 +2,19 @@
 import ShowsBtn from "./ShowsBtn"
 
 
-const SearchShows = ({shows, fetchShows, summary}) => {
+const SearchShows = ({shows, fetchShows, handleInputChange, setShowInput, showInput, isFetched, setIsFetched, setShows, getShows}) => {
   return (
     <form className="form" >
-    <input value={summary} className="searchers" type="search" placeholder="Search Shows"/>
-      <ShowsBtn summary={summary} shows={shows} fetchShows={fetchShows} />
+    <input className="searchers" type="search" placeholder="Search Shows" onChange={handleInputChange} />
+      <ShowsBtn 
+      shows={shows}
+      setShows={setShows}
+      getShows={getShows}
+      fetchShows={fetchShows} 
+      showInput={showInput}
+      isFetched={isFetched}
+      setIsFetched={setIsFetched}      
+      />
     </form>
   )
 }

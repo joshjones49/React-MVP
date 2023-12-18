@@ -6,9 +6,9 @@ function displayInfo(show) {
 
 const Show = ({show}) => {
   return (
-    <div className="showDisplay" id={show.id} onClick={() => displayInfo(show)} >
+    <div className="showDisplay" id={show.id} onClick={() => displayInfo(show)}>
       <h1>{show.name}</h1>
-      <p>{show.summary}</p>
+      <h4>IMAGE COMING</h4>
     </div>
   )
 }

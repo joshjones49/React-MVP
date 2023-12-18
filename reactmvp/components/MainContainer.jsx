@@ -4,10 +4,10 @@ import RightContainer from "./RightContainer"
 import MidContainer from "./MidContainer"
 
 
-const MainContainer = ({shows}) => {
+const MainContainer = ({shows, watchlistName, setWatchlistName}) => {
   return (
     <div id='mainContainer'>
-        <LeftContainer />
+        <LeftContainer watchlistName={watchlistName} setWatchlistName={setWatchlistName}  />
         <MidContainer shows={shows}/>
         <RightContainer shows={shows}/>
     </div>

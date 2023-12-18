@@ -5,7 +5,7 @@
 
 const WatchlistBtn = () => {
   return (
-    <button className="subBtn" >
+    <button className="subBtn" type='button'>
       SEARCH
     </button>
   )

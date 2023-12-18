@@ -2,10 +2,10 @@
 
 
 
-const MidContainer = ({shows, fetchShows, summary}) => {
+const MidContainer = ({shows, fetchShows, showInput}) => {
   return (
     <div id='MidContainer' >
-      <p>WELCOME</p>
+      
     </div>
   )
 }
