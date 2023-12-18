@@ -31,7 +31,7 @@ app.get('/shows', async (req, res) => {
     try {
         const {rows} = await pool.query('SELECT * FROM show ORDER BY id ASC;');
         res.status(200).json(rows)
-        console.log('Logged All')
+        // console.log('Logged All')
     } catch (error) {
         console.log(error);
         res.status(500).send(error);        
@@ -45,7 +45,7 @@ app.get('/shows/:name', async (req, res) => {
     try {
         const {rows} = await pool.query('SELECT * FROM show WHERE name LIKE $1', [`%${name}%`]);
         res.status(200).send(rows);
-        console.log('Logged:', name)
+        // console.log('Logged:', name)
     } catch (error) {
         res.json(error)
         console.log(error);
@@ -59,7 +59,6 @@ app.get('/watchlists', async (req, res) => {
     try {
         const {rows} = await pool.query('SELECT * FROM watchlist ORDER BY id ASC;');
         res.status(200).json(rows)
-        console.log('Logged All')
     } catch (error) {
         console.log(error);
         res.status(500).send(error);        
@@ -73,7 +72,6 @@ app.get('/watchlists/:name', async (req, res) => {
     try {
         const {rows} = await pool.query('SELECT * FROM watchlist WHERE UPPER(name) LIKE UPPER($1)', [`%${name}%`]);
         res.status(200).send(rows);
-        console.log('Logged:', name)
     } catch (error) {
         res.json(error)
         console.log(error);

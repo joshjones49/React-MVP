@@ -10,6 +10,15 @@ import MainContainer from '../components/MainContainer'
 function App() {
 
   const [shows, setShows] = useState([]);
+  const [summary, setSummary] = useState('')
+
+  const fetchShows = async (elem) => {
+    let name = elem;
+    const res = await fetch(`http://localhost:8000/shows/${name}`)
+    const data = await res.json()
+    setSummary(data)
+    console.log(data)
+  }
 
   useEffect(() => {
 
@@ -26,8 +35,8 @@ function App() {
 
   return (
     <div>
-      <Top />
-      <MainContainer shows={shows}/>
+      <Top shows={shows} fetchShows={fetchShows} />
+      <MainContainer summary={summary} shows={shows}/>
     </div>
   )
 }

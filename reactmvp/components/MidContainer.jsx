@@ -1,9 +1,11 @@
-import React from 'react'
 
-const MidContainer = () => {
+
+
+
+const MidContainer = ({shows, fetchShows, summary}) => {
   return (
     <div id='MidContainer' >
-      
+      <p>WELCOME</p>
     </div>
   )
 }

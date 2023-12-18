@@ -8,7 +8,7 @@ const MainContainer = ({shows}) => {
   return (
     <div id='mainContainer'>
         <LeftContainer />
-        <MidContainer />
+        <MidContainer shows={shows}/>
         <RightContainer shows={shows}/>
     </div>
   )
