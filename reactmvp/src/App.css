@@ -30,6 +30,8 @@ body {
     display:flex;
     justify-content: space-between;
     align-items: center;
+    animation: fadeIn 2s ease-in-out;
+    transition: backgorund-color 2s ease, color 2s ease;
 }
 
 #mainContainer {
@@ -86,13 +88,15 @@ body {
 
 #LeftContainer {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     background-color: rgb(255, 255, 255, .7);
     height: 90%;
     width: 33%;
     overflow: auto;
     margin-top: 30px;
-    border-radius: 10px;
+    animation: fadeIn 2s ease-in-out;
+    transition: backgorund-color 2s ease, color 2s ease;
 }
 
 #MidContainer {
@@ -104,7 +108,7 @@ body {
 }
 
 #RightContainer {
-    height: 90%;
+    height: 93%;
     width: 33%;
     overflow: auto;
 }
@@ -128,5 +132,28 @@ body {
 
 #header {
     color: var(--delft-blue);
+    animation: fadeIn 2s ease-in-out;
+    transition: background-color 2s ease-in-out, color 2s ease-in-out;
+}
+
+#watchlist {
+    border: 2px solid var(--delft-blue);
+    height: 70%;
+    width: 90%;    
+    animation: fadeIn 2s ease-in-out;
+    transition: background-color 2s ease-in-out, color 2s ease-in-out;
+    opacity: .7;
+    background-color: white;
+}
+
+#watchlistName {
+    color: var(--delft-blue);
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid var(--delft-blue);
+    animation: fadeIn 2s ease-in-out;
+    transition: background-color 2s ease-in-out, color 2s ease-in-out;
+    opacity: .7;
 }
 
