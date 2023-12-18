@@ -137,7 +137,7 @@ body {
 }
 
 #watchlist {
-    border: 2px solid var(--delft-blue);
+    border: none;
     height: 70%;
     width: 90%;    
     animation: fadeIn 2s ease-in-out;
@@ -151,7 +151,7 @@ body {
     margin-bottom: 20px;
     text-align: center;
     border-radius: 5px;
-    border: 2px solid var(--delft-blue);
+    border: none;
     animation: fadeIn 2s ease-in-out;
     transition: background-color 2s ease-in-out, color 2s ease-in-out;
     opacity: .7;
