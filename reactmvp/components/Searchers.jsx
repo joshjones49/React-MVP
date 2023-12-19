@@ -1,6 +1,6 @@
 
 
-import SearchWatchlists from "./SearchWatchlists"
+
 import SearchShows from "./SearchShows"
 
 const Searchers = ({shows, fetchShows, handleInputChange, setShowInput, showInput, isFetched, setIsFetched, setShows, getShows}) => {
@@ -17,10 +17,6 @@ const Searchers = ({shows, fetchShows, handleInputChange, setShowInput, showInpu
         isFetched={isFetched}
         setIsFetched={setIsFetched}
         />
-
-
-
-        <SearchWatchlists />
     </div>
   )
 }

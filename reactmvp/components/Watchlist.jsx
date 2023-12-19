@@ -1,14 +1,43 @@
 
 import InputField from "./InputField"
 import { useState } from "react"
+import toast, {Toaster} from 'react-hot-toast'
 
 const Watchlist = ({watchlistName, setWatchlistName}) => {
 
   const [watchlistInput, setWatchlistInput] = useState(Array(8).fill(''))
 
   const handleClick = async () => {
-    const combinedValues = watchlistInput.join(', ');
+    const combinedValues = watchlistInput.join('\n');
     console.log(combinedValues);
+
+    const onlySpaces = /\S/.test(watchlistName) && /\S/.test(combinedValues);
+
+    if(!watchlistName || !combinedValues) {
+      toast.error('Name & List Required', {
+        className: 'toastError',
+        duration: 2000,
+        position: 'top-center',
+        style: {
+          background: 'red',
+          color: 'white'
+        }
+      });
+      return;
+    }
+
+    if(!onlySpaces) {
+      toast.error('Cannot Contain Only Spaces', {
+        className: 'toastError',
+        duration: 2000,
+        position: 'top-center',
+        style: {
+          background: 'red',
+          color: 'white'
+        }
+      });
+      return;
+    }
 
     try {
       const res = await fetch('http://localhost:8000/watchlists', {
@@ -17,6 +46,20 @@ const Watchlist = ({watchlistName, setWatchlistName}) => {
         body: JSON.stringify({name: watchlistName, text: combinedValues })
       });
       const data = await res.json();
+      toast('Watchlist Created!', {
+        className: '',
+        duration: 2000,
+        position: 'top-center',
+        style: {
+          background: 'green',
+          color: 'white',
+          height: '70px',
+          width: '200px',
+          fontSize: '30px'
+        }
+      });
+      setWatchlistInput(Array(8).fill(''))
+      setWatchlistName('')
       console.log(data);
     } catch (error) {
       console.error(error);
@@ -27,6 +70,7 @@ const Watchlist = ({watchlistName, setWatchlistName}) => {
 
   return (
     <form id='watchlist' >
+      <Toaster />
       {[...Array(8)].map((_, index) => (
         <InputField 
          key={index}
@@ -45,7 +89,7 @@ const Watchlist = ({watchlistName, setWatchlistName}) => {
       id='createBtn' 
       type="button"
       onClick={handleClick}
-       >CREATE
+       >Add
       </button>
     </form>
   )

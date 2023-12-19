@@ -20,7 +20,7 @@ const ShowsBtn = ({shows, fetchShows, isFetched, setIsFetched, setShows, getShow
     type='button' 
     onClick={handleClick} 
     className="subBtn">
-      {isFetched ? 'RESET' : 'SEARCH'}
+      {isFetched ? 'Reset' : 'Search'}
     </button>
   )
 }

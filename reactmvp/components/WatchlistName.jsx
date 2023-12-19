@@ -8,6 +8,7 @@ const WatchlistName = ({watchlistName, setWatchlistName}) => {
     setWatchlistName(e.target.value)
     console.log(e.target.value)
   }
+
   return (
     <input 
     id='watchlistName' 

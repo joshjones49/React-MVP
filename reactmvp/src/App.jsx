@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Top from '../components/Top'
 import MainContainer from '../components/MainContainer'
-import ShowsBtn from '../components/ShowsBtn'
 import toast, {Toaster} from 'react-hot-toast'
 
 function App() {
@@ -15,6 +14,24 @@ function App() {
   const [showInput, setShowInput] = useState('');
   const [isFetched, setIsFetched] = useState(false);
   const [watchlistName, setWatchlistName] = useState('')
+  const [createdLists, setCreatedLists] = useState([])
+  const [listFetched, setListFetched] = useState(false)
+  
+
+  const fetchWatchlists = async () => {
+
+   if(!listFetched) {
+    const res = await fetch('http://localhost:8000/watchlists')
+    const data = await res.json()
+    setCreatedLists(data)
+    setListFetched(true)
+    console.log(createdLists)
+  } else {
+    setCreatedLists([])
+    setListFetched(false)
+  }
+}
+
 
   const handleInputChange = (e) => {
     setShowInput(e.target.value)
@@ -27,6 +44,10 @@ function App() {
         className: 'toastError',
         duration: 2000,
         position: 'top-center',
+        style: {
+          background: 'red',
+          color: 'white'
+        }
       });
       return;
     }
@@ -80,7 +101,10 @@ function App() {
       />
 
 
-      <MainContainer 
+      <MainContainer
+      listFetched={listFetched}
+      createdLists={createdLists}
+      fetchWatchlists={fetchWatchlists} 
       fetchShows={fetchShows} 
       shows={shows} 
       showInput={showInput}

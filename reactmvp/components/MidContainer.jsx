@@ -1,11 +1,18 @@
 
 
+import WatchlistsDisplay from "./WatchlistsDisplay"
 
+const MidContainer = ({shows, fetchShows, showInput, createdLists}) => {
 
-const MidContainer = ({shows, fetchShows, showInput}) => {
+  
+
   return (
-    <div id='MidContainer' >
-      
+    <div id='MidContainer' className="container">
+      {createdLists.map((list) => (
+        <WatchlistsDisplay 
+        list={list}
+        key={list.id} />
+      ))}
     </div>
   )
 }

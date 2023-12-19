@@ -2,13 +2,20 @@
 import Watchlist from "./Watchlist"
 import WatchlistName from "./WatchlistName"
 
-const LeftContainer = ({watchlistName, setWatchlistName}) => {
+const LeftContainer = ({watchlistName, setWatchlistName, fetchWatchlists, listFetched}) => {
   return (
-    <div id='LeftContainer' >
-      <h1 id="header">Create Your Watchlist!</h1>
+    <div id='LeftContainer' className="container" >
+      <h1 id="header">Create A Watchlist!</h1>
+      <h5>or click for existing lists</h5>
+      <button 
+      id='getLists' 
+      type="button" 
+      onClick={fetchWatchlists}>
+        Watchlists/Clear
+        </button>
       <WatchlistName watchlistName={watchlistName} setWatchlistName={setWatchlistName} />
       <Watchlist watchlistName={watchlistName} setWatchlistName={setWatchlistName} />
-      <small>BINGEBURST.COM, Come and binge your favorite shows!</small>
+      <small>BINGEBURST.COM, Create Your Binge List!</small>
     </div>
   )
 }

@@ -85,6 +85,13 @@ app.post('/watchlists', async (req, res) => {
     if (!name || !text) {
         return res.status(400).json('Name And List Required');
     }
+
+    const onlySpaces = /\S/.test(name) && /\S/.test(text);
+
+    if (!onlySpaces) {
+        return res.status(400).json('Name and List cannot be empty or contain only spaces.');
+    }
+
      try {
         const {rows} = await pool.query(
             'INSERT INTO watchlist (name, text) VALUES ($1, $2) RETURNING*',
@@ -127,7 +134,7 @@ app.delete('/watchlists/:id', async (req, res) => {
     const id = req.params.id;
     try {
         const {rows} = await pool.query('DELETE FROM watchlist WHERE id = $1', [id]);
-        res.status(200).send(rows);
+        res.status(204).send(rows);
     } catch (error) {
         res.json(error)
         console.log(error);
