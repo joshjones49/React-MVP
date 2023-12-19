@@ -15,6 +15,18 @@
     }
 }
 
+.editField {
+    display: flex;
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+    width: 300px;
+    margin-top: 30px;
+    text-align: center;
+    font-family: teko;
+    color: var(--delft-blue);
+}
+
 body {
     background-image: url('./images/08MS.jpg');
     background-size: cover;
@@ -180,6 +192,15 @@ body {
     border-radius: 10px;
     margin-bottom: 10px;
     cursor: pointer;
+}
+
+#listName {
+    font-size: 50px;
+}
+
+#summary {
+    font-size: 30px;
+    margin-top: -40px;
 }
 
 #edit{
