@@ -1,6 +1,7 @@
 
 
 //DEPENDENCIES======================
+import path from 'path';
 import express from 'express';
 const app = express();
 import cors from 'cors';
@@ -19,7 +20,7 @@ const pool = new Pool({
 
 //MIDDLEWARE===========================
 app.use(cors());
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, '../dist')));
 app.use(express.json());
 
 //ROUTES===================================
@@ -140,6 +141,10 @@ app.delete('/watchlists/:id', async (req, res) => {
         console.log(error);
     }
 });
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../dist', 'index.html'));
+  });
 
 //LISTENER
 app.listen(port, () => {
