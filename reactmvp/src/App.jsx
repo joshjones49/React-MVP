@@ -32,7 +32,7 @@ function App() {
   const fetchWatchlists = async () => {
 
    if(!listFetched) {
-    const res = await fetch('http://localhost:8000/watchlists')
+    const res = await fetch('/watchlists')
     const data = await res.json()
     setCreatedLists(data)
     setListFetched(true)
@@ -81,7 +81,7 @@ function App() {
 
 
     const getShows = async () => {
-      const res = await fetch('http://localhost:8000/shows')
+      const res = await fetch('/shows')
       const data = await res.json()
       setShows(data)
     }

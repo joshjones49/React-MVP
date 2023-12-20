@@ -39,7 +39,7 @@ const Watchlist = ({watchlistName, setWatchlistName}) => {
     }
 
     try {
-      const res = await fetch('http://localhost:8000/watchlists', {
+      const res = await fetch('/watchlists', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({name: watchlistName, text: combinedValues })

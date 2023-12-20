@@ -19,7 +19,7 @@ const deleteList = async (e) => {
   let id = list.id
 
   try {
-    const res = await fetch(`http://localhost:8000/watchlists/${id}`, {
+    const res = await fetch(`/watchlists/${id}`, {
       method: 'DELETE',
     });
 
@@ -68,7 +68,7 @@ const deleteList = async (e) => {
     let id = list.id
 
     try {
-      const res = await fetch(`http://localhost:8000/watchlists/${id}`, {
+      const res = await fetch(`/watchlists/${id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
