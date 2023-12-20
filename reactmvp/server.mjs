@@ -10,6 +10,7 @@ dotenv.config();
 const port = 8000;
 import pkg from 'pg';
 const { Pool } = pkg;
+import {fileURLToPath} from 'url';
 const pool = new Pool({
     user: process.env.DB_USER,
     host: process.env.DB_HOST,
@@ -17,6 +18,8 @@ const pool = new Pool({
     password: process.env.DB_PASSWORD,
     port: process.env.DB_PORT,
   });
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
 
 //MIDDLEWARE===========================
 app.use(cors());
