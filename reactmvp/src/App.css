@@ -15,11 +15,28 @@
     }
 }
 
+#clear {
+    border: none;
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+}
+
+#sum {
+    display: flex;
+    font-size: 34px;
+    width: 90%;
+    background-color: white;
+    color: var(--delft-blue);
+    text-align: center;
+    box-shadow: -20px 10px 10px var(--lapis-lazuli);
+}
+
 img {
     height: 200px;
     width: 200px;
     margin-top: 20px;
-    
+    box-shadow: -5px 5px 10px var(--lapis-lazuli);
 }
 
 .editField {
@@ -36,6 +53,15 @@ img {
 
 body {
     font-family: teko;
+    background: rgb(223, 223, 223);
+    animation: fadeIn 2s ease-in-out;
+}
+
+#sumHolder {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
 }
 
 #top {
@@ -47,6 +73,7 @@ body {
     align-items: center;
     animation: fadeIn 2s ease-in-out;
     transition: backgorund-color 2s ease, color 2s ease;
+    box-shadow: -5px 5px 10px var(--lapis-lazuli);
 }
 
 
@@ -91,7 +118,7 @@ body {
 }
 
 #getLists:active {
-    background-color: var(--polynesian-blue);
+    background-color: var(--delft-blue);
 }
 
 #burst {
@@ -135,6 +162,7 @@ body {
     background-color: rgb(255, 255, 255, .8);
     animation: fadeIn 2s ease-in-out;
     transition: backgorund-color 2s ease, color 2s ease;
+    box-shadow: -5px 5px 10px var(--lapis-lazuli);
 }
 
 #MidContainer {
@@ -142,13 +170,15 @@ body {
     flex-direction: column;
     overflow: auto;
     gap: 10px 10px;
+    align-items: center;
 }
 
 #RightContainer {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    align-items: center;
     overflow: auto;
-    gap: 10px 10px;
+    gap: 10px;
 }
 
 .container {
@@ -161,6 +191,7 @@ body {
     display: flex;
     flex-direction: column;
     height: max-content;
+    width: 90%;
     background-color: rgb(255, 255, 255, .8);
     color: var(--delft-blue);
     text-align: center;
@@ -168,6 +199,7 @@ body {
     animation: fadeIn 1s ease-in-out;
     transition: backgorund-color 1s ease, color 1s ease;
     align-items: center;
+    box-shadow: -10px 10px 20px var(--lapis-lazuli);
 }
 
 .showDisplay:hover {
@@ -233,6 +265,7 @@ body {
     animation: fadeIn 2s ease-in-out;
     transition: background-color 2s ease-in-out, color 2s ease-in-out;
     background-color: rgb(255, 255, 255, 0);
+    box-shadow: -5px 5px 10px var(--lapis-lazuli);
 }
 
 #watchlistName {
@@ -244,6 +277,7 @@ body {
     border: 2px solid var(--delft-blue);
     animation: fadeIn 2s ease-in-out;
     transition: background-color 2s ease-in-out, color 2s ease-in-out;
+    box-shadow: -5px 5px 10px var(--lapis-lazuli);
 }
 
 .listInput {
@@ -261,15 +295,17 @@ body {
 
 .listDisplay {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    background: rgb(255, 255, 255, .8);
-    font-size: 12px;
+    background: white;
+    font-size: 20px;
     color: var(--delft-blue);
-    border-bottom: 1px solid;
     cursor: pointer;
     animation: fadeIn 1s ease-in-out;
     transition: backgorund-color 1s ease, color 1s ease;
+    box-shadow: -20px 10px 10px var(--lapis-lazuli);
+    width: 90%;
 }
 
 .listDisplay:hover {
@@ -289,7 +325,7 @@ body {
 }
 
 #createBtn:active {
-    background-color: var(--lapis-lazuli);
+    background-color: var(--delft-blue);
 }
 
 .toastError {

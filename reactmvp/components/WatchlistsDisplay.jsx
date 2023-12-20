@@ -51,7 +51,7 @@ const deleteList = async (e) => {
       })
     }
   } catch (error) {
-    console.error(`Error deleting watchlist with ID ${list.id}: ${error.message}`);
+    console.error(error);
   }
 };
 

@@ -2,7 +2,7 @@
 
 import WatchlistsDisplay from "./WatchlistsDisplay"
 
-const MidContainer = ({shows, fetchShows, showInput, createdLists}) => {
+const MidContainer = ({shows, fetchShows, showInput, createdLists, currentSum, clear, setSumVisable, sumVisable}) => {
 
   
 
@@ -13,6 +13,15 @@ const MidContainer = ({shows, fetchShows, showInput, createdLists}) => {
         list={list}
         key={list.id} />
       ))}
+
+
+        <div id='sumHolder'>
+          
+          <p id='sum'>{currentSum}</p>
+          {sumVisable ? (
+            <button id='clear' onClick={clear}>Clear</button>
+          ) : null}
+        </div>
     </div>
   )
 }

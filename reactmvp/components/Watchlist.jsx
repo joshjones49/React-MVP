@@ -8,10 +8,9 @@ const Watchlist = ({watchlistName, setWatchlistName}) => {
   const [watchlistInput, setWatchlistInput] = useState(Array(8).fill(''))
 
   const handleClick = async () => {
-    const combinedValues = watchlistInput.join('\n');
-    console.log(combinedValues);
+    const combinedValues = watchlistInput.join(' - ');
 
-    const onlySpaces = /\S/.test(watchlistName) && /\S/.test(combinedValues);
+    const onlySpaces = /\S/.test(watchlistName) && /\S/.test(combinedValues);  
 
     if(!watchlistName || !combinedValues) {
       toast.error('Name & List Required', {

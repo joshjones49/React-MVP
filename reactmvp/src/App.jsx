@@ -13,10 +13,21 @@ function App() {
   const [shows, setShows] = useState([]);
   const [showInput, setShowInput] = useState('');
   const [isFetched, setIsFetched] = useState(false);
-  const [watchlistName, setWatchlistName] = useState('')
-  const [createdLists, setCreatedLists] = useState([])
-  const [listFetched, setListFetched] = useState(false)
-  
+  const [watchlistName, setWatchlistName] = useState('');
+  const [createdLists, setCreatedLists] = useState([]);
+  const [listFetched, setListFetched] = useState(false);
+  const [currentSum, setCurrentSum] = useState('');
+  const [sumVisable, setSumVisable] = useState(false)
+
+  const updateSum = (summary) => {
+    setCurrentSum(summary);
+    setSumVisable(true)
+  }
+
+  const clear = () => {
+    setCurrentSum('');
+    setSumVisable(false);
+  }
 
   const fetchWatchlists = async () => {
 
@@ -58,9 +69,8 @@ function App() {
   }
 
   useEffect(() => {
-
     const placeShows = async () => {
-      const res = await fetch('http://localhost:8000/shows')
+      const res = await fetch(`http://localhost:8000/shows`)
       const data = await res.json()
       setShows(data)
     }
@@ -110,6 +120,11 @@ function App() {
       showInput={showInput}
       watchlistName={watchlistName}
       setWatchlistName={setWatchlistName}
+      updateSum={updateSum}
+      currentSum={currentSum}
+      clear={clear}
+      setSumVisable={setSumVisable}
+      sumVisable={sumVisable}
       />
     </div>
   )

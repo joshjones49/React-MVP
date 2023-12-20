@@ -1,18 +1,17 @@
 
 
 
-const Show = ({show}) => {
+const Show = ({show, updateSum}) => {
 
-  function displayInfo() {
-    console.log(show.summary)
-}
-
+  const dispalySum = () => {
+    updateSum(show.summary)
+  }
 
   return (
-    <div className="showDisplay" id={show.id} onClick={() => displayInfo(show)}>
+    <div className="showDisplay" id={show.id} onClick={dispalySum}>
       <img src={show.image}/>
       <h1 id='showName' >{show.name}</h1>
-      <h4 id='showSummary' >{show.summary}</h4>
+      {/* <h4 id='showSummary' >{show.summary}</h4> */}
     </div>
   )
 }
