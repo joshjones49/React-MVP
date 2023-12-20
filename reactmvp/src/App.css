@@ -306,6 +306,7 @@ body {
     transition: backgorund-color 1s ease, color 1s ease;
     box-shadow: -20px 10px 10px var(--lapis-lazuli);
     width: 90%;
+    align-items: center;
 }
 
 .listDisplay:hover {
