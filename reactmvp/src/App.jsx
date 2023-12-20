@@ -62,7 +62,7 @@ function App() {
       });
       return;
     }
-    const res = await fetch(`http://localhost:8000/shows/${name}`)
+    const res = await fetch(`/shows/${name}`)
     const data = await res.json()
     setShows(data)
     setIsFetched(true)
@@ -70,7 +70,7 @@ function App() {
 
   useEffect(() => {
     const placeShows = async () => {
-      const res = await fetch(`http://localhost:8000/shows`)
+      const res = await fetch(`/shows`)
       const data = await res.json()
       setShows(data)
     }
